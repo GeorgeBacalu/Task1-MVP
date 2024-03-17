@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="DictionaryManager" Height="450" Width="800">
     <StackPanel Margin="15">
+        <Button x:Name="ButtonAddWord" Content="Add Word" HorizontalAlignment="Left" Margin="0,0,0,10" Width="75" Height="30" Click="ButtonAddWord_Click" />
         <ListBox ItemsSource="{Binding Dictionary}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled">
             <ListBox.ItemTemplate>
                 <DataTemplate>
