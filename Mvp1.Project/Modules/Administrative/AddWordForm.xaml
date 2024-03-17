@@ -3,18 +3,38 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Mvp1.Project.Modules.Administrative"
+        xmlns:validation="clr-namespace:Mvp1.Project.Validations"
+        xmlns:context="clr-namespace:Mvp1.Project.ViewModels"
         mc:Ignorable="d"
         Title="AddWordForm" Height="450" Width="800">
+    <Window.DataContext>
+        <context:WordFormViewModel />
+    </Window.DataContext>
     <StackPanel HorizontalAlignment="Center">
         <TextBlock Text="Add Word" HorizontalAlignment="Center" Margin="30" FontSize="30" FontWeight="Bold" />
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="Name:        " Margin="10" FontSize="18" />
-            <TextBox x:Name="TextName" Margin="10" FontSize="18" Width="200" />
+            <TextBox x:Name="TextName" Validation.ErrorTemplate="{StaticResource errorTemplate}" Margin="10" FontSize="18" Width="200">
+                <TextBox.Text>
+                    <Binding Path="Name" UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <validation:WordNameValidation />
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="Definition:  " Margin="10" FontSize="18" />
-            <TextBox x:Name="TextDefinition" Margin="10" FontSize="18" Width="200" />
+            <TextBox x:Name="TextDefinition" Validation.ErrorTemplate="{StaticResource errorTemplate}" Margin="10" FontSize="18" Width="200">
+                <TextBox.Text>
+                    <Binding Path="Definition" UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <validation:WordDefinitionValidation />
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="Image URL: " Margin="10" FontSize="18" />
@@ -24,6 +44,6 @@
             <TextBlock Text="Category:    " Margin="10" FontSize="18" />
             <ComboBox x:Name="ComboBoxCategory" ItemsSource="{Binding Categories}" SelectedIndex="0" Margin="10" FontSize="18" Width="200" />
         </StackPanel>
-        <Button x:Name="ButtonAddWordSubmit" Content="Submit" Margin="10" Width="100" Height="30" Click="ButtonAddWordSubmit_Click" />
+        <Button x:Name="ButtonAddWordSubmit" Content="Submit" IsEnabled="{Binding IsValid}" Margin="10" Width="100" Height="30" Click="ButtonAddWordSubmit_Click" />
     </StackPanel>
 </Window>

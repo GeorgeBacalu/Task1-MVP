@@ -89,6 +89,9 @@
     <Compile Include="Modules\Administrative\AddWordForm.xaml.cs">
       <DependentUpon>AddWordForm.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Validations\WordDefinitionValidation.cs" />
+    <Compile Include="Validations\WordNameValidation.cs" />
+    <Compile Include="ViewModels\WordFormViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
