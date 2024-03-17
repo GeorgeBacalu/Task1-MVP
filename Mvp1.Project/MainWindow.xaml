@@ -6,7 +6,12 @@
         xmlns:local="clr-namespace:Mvp1.Project"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <StackPanel HorizontalAlignment="Center">
+        <TextBlock Text="Choose module" HorizontalAlignment="Center" Margin="30" FontSize="30" FontWeight="Bold" />
+        <StackPanel Orientation="Horizontal">
+            <Button x:Name="ButtonAdministrative" Content="Administrative" Width="100" Height="40" Margin="10,0" Click="ButtonAdministrative_Click" />
+            <Button x:Name="ButtonWordFinder" Content="Word Finder" Width="100" Height="40" Margin="10,0" Click="ButtonWordFinder_Click" />
+            <Button x:Name="ButtonEntertainment" Content="Entertainment" Width="100" Height="40" Margin="10,0" Click="ButtonEntertainment_Click" />
+        </StackPanel>
+    </StackPanel>
 </Window>
