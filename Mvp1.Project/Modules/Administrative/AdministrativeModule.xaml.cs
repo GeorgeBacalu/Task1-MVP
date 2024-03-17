@@ -1,27 +1,30 @@
-﻿using System;
+﻿using Mvp1.Project.Data;
+using Mvp1.Project.Models;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Mvp1.Project.Modules.Administrative
 {
-    /// <summary>
-    /// Interaction logic for AdministrativeModule.xaml
-    /// </summary>
     public partial class AdministrativeModule : Window
     {
+        public IList<User> Users { get; private set; }
+
         public AdministrativeModule()
         {
             InitializeComponent();
+            DataManager dataManager = new DataManager("../../Data/users.json");
+            Users = dataManager.LoadData<IList<User>>();
+        }
+
+        private void ButtonAdminLogin_Click(object sender, RoutedEventArgs e)
+        {
+            string username = TextUsername.Text;
+            string password = TextPassword.Password;
+            User user = Users.FirstOrDefault(u => u.Username == username && u.Password == password);
+            if (user == null) MessageBox.Show("Invalid username or password!");
+            else if (user.Role == ERole.User) MessageBox.Show("You don't have permission to access this module!");
+            else new DictionaryManager().Show();
         }
     }
 }

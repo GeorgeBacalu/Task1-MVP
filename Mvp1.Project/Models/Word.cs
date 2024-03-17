@@ -5,7 +5,7 @@ namespace Mvp1.Project.Models
     public class Word
     {
         public int Id { get; set; }
-        public string Text { get; set; }
+        public string Name { get; set; }
         public string Definition { get; set; }
         public string ImageUrl { get; set; } = "https://via.placeholder.com/150";
         public ECategory Category { get; set; }

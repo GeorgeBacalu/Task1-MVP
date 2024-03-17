@@ -6,7 +6,16 @@
         xmlns:local="clr-namespace:Mvp1.Project.Modules.Administrative"
         mc:Ignorable="d"
         Title="AdministrativeModule" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <StackPanel HorizontalAlignment="Center">
+        <TextBlock Text="Admin Login" HorizontalAlignment="Center" Margin="30" FontSize="30" FontWeight="Bold" />
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Username:" Margin="10" FontSize="18" />
+            <TextBox x:Name="TextUsername" Margin="10" FontSize="18" Width="200" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Password: " Margin="10" FontSize="18" />
+            <PasswordBox x:Name="TextPassword" Margin="10" FontSize="18" Width="200" />
+        </StackPanel>
+        <Button x:Name="ButtonAdminLogin" Content="Login" Margin="10" Width="100" Height="30" Click="ButtonAdminLogin_Click" />
+    </StackPanel>
 </Window>

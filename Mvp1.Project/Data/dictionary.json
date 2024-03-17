@@ -1,0 +1,142 @@
+[
+  {
+    "Id": 1,
+    "Name": "Asculta",
+    "Definition": "A fi atent la sunete sau la ceea ce cineva spune.",
+    "ImageUrl": "https://via.placeholder.com/150",
+    "Category": 1
+  },
+  {
+    "Id": 2,
+    "Name": "Căldură",
+    "Definition": "Sensatie perceputa in conditii de temperaturi ridicate.",
+    "ImageUrl": "https://via.placeholder.com/150",
+    "Category": 0
+  },
+  {
+    "Id": 3,
+    "Name": "Carte",
+    "Definition": "Obiect constând din mai multe foi tipărite și legate împreună, care conțin Name scris.",
+    "ImageUrl": "https://via.placeholder.com/150",
+    "Category": 0
+  },
+  {
+    "Id": 4,
+    "Name": "Citit",
+    "Definition": "A recunoaște și a înțelege scrisul.",
+    "ImageUrl": "https://via.placeholder.com/150",
+    "Category": 1
+  },
+  {
+    "Id": 5,
+    "Name": "Construi",
+    "Definition": "A face, a realiza o clădire sau o structură arhitecturală.",
+    "ImageUrl": "https://via.placeholder.com/150",
+    "Category": 1
+  },
+  {
+    "Id": 6,
+    "Name": "Desen",
+    "Definition": "Reprezentare grafică a unui obiect prin linii pe o suprafață.",
+    "ImageUrl": "https://via.placeholder.com/150",
+    "Category": 0
+  },
+  {
+    "Id": 7,
+    "Name": "Energie",
+    "Definition": "Capacitatea de a efectua un lucru, de a produce mișcare sau schimbări.",
+    "ImageUrl": "https://via.placeholder.com/150",
+    "Category": 0
+  },
+  {
+    "Id": 8,
+    "Name": "Fruct",
+    "Definition": "Partea unei plante care conține semințele și este de obicei comestibilă după coacere.",
+    "ImageUrl": "https://via.placeholder.com/150",
+    "Category": 0
+  },
+  {
+    "Id": 9,
+    "Name": "Istoric",
+    "Definition": "Care aparține trecutului; parte a istoriei.",
+    "ImageUrl": "https://via.placeholder.com/150",
+    "Category": 0
+  },
+  {
+    "Id": 10,
+    "Name": "Libertate",
+    "Definition": "Starea unei persoane care nu este supusă constrângerilor.",
+    "ImageUrl": "https://via.placeholder.com/150",
+    "Category": 0
+  },
+  {
+    "Id": 11,
+    "Name": "Merge",
+    "Definition": "A se deplasa într-un anumit mod sau spre o anumită direcție.",
+    "ImageUrl": "https://via.placeholder.com/150",
+    "Category": 1
+  },
+  {
+    "Id": 12,
+    "Name": "Muzică",
+    "Definition": "Artă de a combina sunetele într-o manieră plăcută urechii.",
+    "ImageUrl": "https://via.placeholder.com/150",
+    "Category": 0
+  },
+  {
+    "Id": 13,
+    "Name": "Oraș",
+    "Definition": "Unitate administrativă urbană cu o populație densă și activități variate.",
+    "ImageUrl": "https://via.placeholder.com/150",
+    "Category": 0
+  },
+  {
+    "Id": 14,
+    "Name": "Ploaie",
+    "Definition": "Cădere de apă din nori sub formă de picături.",
+    "ImageUrl": "https://via.placeholder.com/150",
+    "Category": 0
+  },
+  {
+    "Id": 15,
+    "Name": "Prietenie",
+    "Definition": "Relație afectivă între persoane, bazată pe simpatie și încredere.",
+    "ImageUrl": "https://via.placeholder.com/150",
+    "Category": 0
+  },
+  {
+    "Id": 16,
+    "Name": "Rapid",
+    "Definition": "Care se mișcă, se desfășoară cu viteză mare; iute.",
+    "ImageUrl": "https://via.placeholder.com/150",
+    "Category": 2
+  },
+  {
+    "Id": 17,
+    "Name": "Scrie",
+    "Definition": "A forma litere, cuvinte sau simboluri pe o suprafață pentru a comunica informații.",
+    "ImageUrl": "https://via.placeholder.com/150",
+    "Category": 1
+  },
+  {
+    "Id": 18,
+    "Name": "Soare",
+    "Definition": "Astre central al sistemului nostru planetar, în jurul căruia se rotesc planetele.",
+    "ImageUrl": "https://via.placeholder.com/150",
+    "Category": 0
+  },
+  {
+    "Id": 19,
+    "Name": "Verde",
+    "Definition": "De culoarea frunzelor sănătoase.",
+    "ImageUrl": "https://via.placeholder.com/150",
+    "Category": 2
+  },
+  {
+    "Id": 20,
+    "Name": "Zâmbi",
+    "Definition": "A exprima bucurie sau bunăvoință printr-o expresie facială caracteristică.",
+    "ImageUrl": "https://via.placeholder.com/150",
+    "Category": 1
+  }
+]
