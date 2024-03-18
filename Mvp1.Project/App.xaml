@@ -4,13 +4,5 @@
              xmlns:local="clr-namespace:Mvp1.Project"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <ControlTemplate x:Key="errorTemplate">
-            <StackPanel>
-                <Border BorderBrush="Red" BorderThickness="1">
-                    <AdornedElementPlaceholder />
-                </Border>
-                <TextBlock Text="{Binding [0].ErrorContent}" Foreground="Red" FontSize="13" Margin="5,0" />
-            </StackPanel>
-        </ControlTemplate>
     </Application.Resources>
 </Application>

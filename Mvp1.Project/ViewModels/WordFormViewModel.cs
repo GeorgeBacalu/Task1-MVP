@@ -1,36 +1,56 @@
-﻿using Mvp1.Project.Models;
-using System.Collections.Generic;
-using System;
+﻿using System;
 using System.ComponentModel;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using Mvp1.Project.Models;
 using System.Linq;
+using Mvp1.Project.Commands;
+using System.Windows;
 
 namespace Mvp1.Project.ViewModels
 {
-    public class WordFormViewModel : INotifyPropertyChanged, IDataErrorInfo
+    public class WordFormViewModel : INotifyDataErrorInfo
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void NotifyPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-
         private string name;
-        public string Name { get => name; set { name = value; NotifyPropertyChanged(nameof(Name)); SyncValidity(); } }
+        [Required(ErrorMessage = "Name is required!")]
+        public string Name { get => name; set { name = value; Validate(value, nameof(Name)); } }
 
         private string definition;
-        public string Definition { get => definition; set { definition = value; NotifyPropertyChanged(nameof(Definition)); SyncValidity(); } }
+        [Required(ErrorMessage = "Definition is required!")]
+        public string Definition { get => definition; set { definition = value; Validate(value, nameof(Definition)); } }
 
         private string imageUrl;
-        public string ImageUrl { get => imageUrl; set { imageUrl = value; NotifyPropertyChanged(nameof(ImageUrl)); } }
+        public string ImageUrl { get => imageUrl; set => imageUrl = value; }
 
         private ECategory category;
-        public ECategory Category { get => category; set { category = value; NotifyPropertyChanged(nameof(Category)); } }
-        public IList<ECategory> Categories { get => Enum.GetValues(typeof(ECategory)).Cast<ECategory>().ToList(); }
+        public ECategory Category { get => category; set => category = value; }
+        public IList<ECategory> Categories => Enum.GetValues(typeof(ECategory)).Cast<ECategory>().ToList();
 
-        private bool isValid;
-        public bool IsValid { get => isValid; set { isValid = value; NotifyPropertyChanged(nameof(IsValid)); } }
-        public void SyncValidity() => IsValid = !string.IsNullOrWhiteSpace(Name) && !string.IsNullOrWhiteSpace(Definition);
+        Dictionary<string, List<string>> Errors = new Dictionary<string, List<string>>();
 
-        public string Error => null;
-        public string this[string propertyName] =>
-            propertyName == nameof(Name) && string.IsNullOrWhiteSpace(Name) ? "Name is required!" :
-            propertyName == nameof(Definition) && string.IsNullOrWhiteSpace(Definition) ? "Definition is required!" : "";
+        public bool HasErrors => Errors.Count > 0;
+
+        public event EventHandler<DataErrorsChangedEventArgs> ErrorsChanged;
+
+        public IEnumerable GetErrors(string propertyName) => Errors.ContainsKey(propertyName) ? Errors[propertyName] : Enumerable.Empty<string>();
+    
+        public void Validate(object propertyValue, string propertyName)
+        {
+            var results = new List<ValidationResult>();
+            if (Errors.ContainsKey(propertyName)) Errors.Remove(propertyName);
+            Validator.TryValidateProperty(propertyValue, new ValidationContext(this) { MemberName = propertyName }, results);
+            if (results.Any()) Errors.Add(propertyName, results.Select(result => result.ErrorMessage).ToList());
+            ErrorsChanged?.Invoke(this, new DataErrorsChangedEventArgs(propertyName));
+            SubmitCommand.RaiseCanExecuteChanged();
+        }
+
+        public ActionCommand SubmitCommand { get; set; }
+
+        public WordFormViewModel() => SubmitCommand = new ActionCommand(Submit, CanSubmit);
+
+        private void Submit(object obj) => MessageBox.Show("Word added successfully!");
+
+        private bool CanSubmit(object obj) => Validator.TryValidateObject(this, new ValidationContext(this), null);
     }
 }
