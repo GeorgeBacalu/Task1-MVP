@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace Mvp1.Project.Modules.Administrative
 {
@@ -21,5 +23,11 @@ namespace Mvp1.Project.Modules.Administrative
         }
 
         private void ButtonAddWord_Click(object sender, RoutedEventArgs e) => new AddWordForm(Dictionary).Show();
+
+        private void ListBoxItem_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            var listBoxItem = sender as ListBoxItem;
+            if (listBoxItem != null) new WordDetails(listBoxItem.Content as Word, Dictionary).Show();
+        }
     }
 }

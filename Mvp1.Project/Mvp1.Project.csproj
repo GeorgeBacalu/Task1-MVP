@@ -91,6 +91,12 @@
     <Compile Include="Modules\Administrative\AddWordForm.xaml.cs">
       <DependentUpon>AddWordForm.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Modules\Administrative\UpdateWordForm.xaml.cs">
+      <DependentUpon>UpdateWordForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Administrative\WordDetails.xaml.cs">
+      <DependentUpon>WordDetails.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\WordFormViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -114,6 +120,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Modules\Administrative\DictionaryManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Modules\Administrative\UpdateWordForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Modules\Administrative\WordDetails.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

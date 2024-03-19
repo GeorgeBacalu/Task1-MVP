@@ -49,7 +49,7 @@ namespace Mvp1.Project.ViewModels
 
         public WordFormViewModel() => SubmitCommand = new ActionCommand(Submit, CanSubmit);
 
-        private void Submit(object obj) => MessageBox.Show("Word added successfully!");
+        private void Submit(object obj) => MessageBox.Show("Word saved successfully!");
 
         private bool CanSubmit(object obj) => Validator.TryValidateObject(this, new ValidationContext(this), null);
     }

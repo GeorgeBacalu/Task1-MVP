@@ -9,6 +9,11 @@
     <StackPanel Margin="15">
         <Button x:Name="ButtonAddWord" Content="Add Word" HorizontalAlignment="Left" Margin="0,0,0,10" Width="75" Height="30" Click="ButtonAddWord_Click" />
         <ListBox ItemsSource="{Binding Dictionary}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+            <ListBox.Resources>
+                <Style TargetType="ListBoxItem">
+                    <EventSetter Event="PreviewMouseLeftButtonDown" Handler="ListBoxItem_PreviewMouseLeftButtonDown" />
+                </Style>
+            </ListBox.Resources>
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding Name}" Margin="5" />
