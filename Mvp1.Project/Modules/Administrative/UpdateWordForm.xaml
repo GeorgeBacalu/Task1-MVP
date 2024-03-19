@@ -33,8 +33,12 @@
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <Label Content="Category:    " Margin="10" FontSize="18" />
-            <ComboBox x:Name="ComboBoxCategory" ItemsSource="{Binding Categories}" SelectedIndex="0" VerticalContentAlignment="Center" Margin="10" FontSize="18" Width="200" />
+            <ComboBox x:Name="ComboBoxCategory" 
+              Text="{Binding CategoryName, UpdateSourceTrigger=PropertyChanged}" 
+              ItemsSource="{Binding Categories}" DisplayMemberPath="Name" SelectedValuePath="Id" SelectedIndex="0" IsEditable="True" 
+              VerticalContentAlignment="Center" Margin="10" FontSize="18" Width="200" />
         </StackPanel>
+        <Label Content="{Binding ElementName=ComboBoxCategory, Path=(Validation.Errors)[0].ErrorContent}" Foreground="Red" />
         <Button Content="Submit" Command="{Binding SubmitCommand}" Margin="10" Width="100" Height="30" Click="ButtonUpdateWordSubmit_Click" />
     </StackPanel>
 </Window>

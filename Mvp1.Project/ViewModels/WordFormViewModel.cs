@@ -23,9 +23,12 @@ namespace Mvp1.Project.ViewModels
         private string imageUrl;
         public string ImageUrl { get => imageUrl; set => imageUrl = value; }
 
-        private ECategory category;
-        public ECategory Category { get => category; set => category = value; }
-        public IList<ECategory> Categories => Enum.GetValues(typeof(ECategory)).Cast<ECategory>().ToList();
+        private string categoryName;
+        [Required(ErrorMessage = "Category is required!")]
+        public string CategoryName { get => categoryName; set { categoryName = value; Validate(value, nameof(CategoryName)); } }
+
+        private IList<Category> categories;
+        public IList<Category> Categories { get => categories; set => categories = value; }
 
         Dictionary<string, List<string>> Errors = new Dictionary<string, List<string>>();
 

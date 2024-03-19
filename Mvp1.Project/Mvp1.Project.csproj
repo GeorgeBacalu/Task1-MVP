@@ -88,6 +88,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\ActionCommand.cs" />
+    <Compile Include="Models\Category.cs" />
     <Compile Include="Modules\Administrative\AddWordForm.xaml.cs">
       <DependentUpon>AddWordForm.xaml</DependentUpon>
     </Compile>
@@ -173,6 +174,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Data\categories.json" />
     <None Include="Data\dictionary.json" />
     <None Include="Data\games.json" />
     <None Include="Data\users.json" />

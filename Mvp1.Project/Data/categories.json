@@ -1,0 +1,34 @@
+[
+  {
+    "Id": 1,
+    "Name": "Substantive"
+  },
+  {
+    "Id": 2,
+    "Name": "Verbe"
+  },
+  {
+    "Id": 3,
+    "Name": "Adjective"
+  },
+  {
+    "Id": 4,
+    "Name": "Adverb"
+  },
+  {
+    "Id": 5,
+    "Name": "Pronume"
+  },
+  {
+    "Id": 6,
+    "Name": "Prepozitie"
+  },
+  {
+    "Id": 7,
+    "Name": "Conjunctie"
+  },
+  {
+    "Id": 8,
+    "Name": "Interjectie"
+  }
+]

@@ -10,12 +10,12 @@ namespace Mvp1.Project.Modules.Administrative
         public Word Word { get; set; }
         public ObservableCollection<Word> Dictionary { get; set; }
 
-        public WordDetails(Word Word, ObservableCollection<Word> Dictionary)
+        public WordDetails(Word word, ObservableCollection<Word> dictionary)
         {
             InitializeComponent();
-            this.Word = Word;
-            this.Dictionary = Dictionary;
-            DataContext = this.Word;
+            Word = word;
+            Dictionary = dictionary;
+            DataContext = Word;
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e) => new DictionaryManager().Show();

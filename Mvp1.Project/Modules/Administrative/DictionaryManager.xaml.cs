@@ -26,8 +26,8 @@ namespace Mvp1.Project.Modules.Administrative
 
         private void ListBoxItem_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            var listBoxItem = sender as ListBoxItem;
-            if (listBoxItem != null) new WordDetails(listBoxItem.Content as Word, Dictionary).Show();
+            if (sender is ListBoxItem listBoxItem) 
+                new WordDetails(listBoxItem.Content as Word, Dictionary).Show();
         }
     }
 }
