@@ -7,11 +7,16 @@ using Mvp1.Project.Models;
 using System.Linq;
 using Mvp1.Project.Commands;
 using System.Windows;
+using System.Windows.Media.Imaging;
+using System.IO;
 
 namespace Mvp1.Project.ViewModels
 {
-    public class WordFormViewModel : INotifyDataErrorInfo
+    public class WordFormViewModel : INotifyDataErrorInfo, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+
         private string name;
         [Required(ErrorMessage = "Name is required!")]
         public string Name { get => name; set { name = value; Validate(value, nameof(Name)); } }
@@ -20,8 +25,21 @@ namespace Mvp1.Project.ViewModels
         [Required(ErrorMessage = "Definition is required!")]
         public string Definition { get => definition; set { definition = value; Validate(value, nameof(Definition)); } }
 
-        private string imageUrl;
-        public string ImageUrl { get => imageUrl; set => imageUrl = value; }
+        private string imagePath;
+        public string ImagePath { get => imagePath; set { imagePath = value; UpdateImageSource(imagePath); } }
+
+        private void UpdateImageSource(string relativePath)
+        {
+            string fullPath = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath));
+            Image = new BitmapImage(new Uri(fullPath, UriKind.Absolute));
+            IsImageUploaded = true;
+        }
+
+        private BitmapImage image;
+        public BitmapImage Image { get => image; set { image = value; OnPropertyChanged(nameof(Image)); } }
+
+        private bool isImageUploaded;
+        public bool IsImageUploaded { get => isImageUploaded; set { isImageUploaded = value; OnPropertyChanged(nameof(IsImageUploaded)); } }
 
         private string categoryName;
         [Required(ErrorMessage = "Category is required!")]

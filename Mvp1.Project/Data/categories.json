@@ -30,5 +30,13 @@
   {
     "Id": 8,
     "Name": "Interjectie"
+  },
+  {
+    "Id": 9,
+    "Name": "Cuvinte noi"
+  },
+  {
+    "Id": 10,
+    "Name": "Cuvinte vechi"
   }
 ]

@@ -5,31 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:context="clr-namespace:Mvp1.Project.ViewModels"
         mc:Ignorable="d"
-        Title="UpdateWordForm" Height="450" Width="800">
+        Title="UpdateWordForm" Height="550" Width="800">
     <Window.DataContext>
         <context:WordFormViewModel />
     </Window.DataContext>
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVisibility" />
+    </Window.Resources>
     <StackPanel HorizontalAlignment="Center">
         <TextBlock Text="Update Word" HorizontalAlignment="Center" Margin="20" FontSize="30" FontWeight="Bold" />
         <StackPanel Orientation="Horizontal">
             <Label Content="Name:         " Margin="10" FontSize="18" />
             <TextBox x:Name="TextName"
-                 Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" 
-                 ToolTip="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent}" 
-                 VerticalContentAlignment="Center" Margin="10" FontSize="18" Width="200" />
+             Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" 
+             ToolTip="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent}" 
+             VerticalContentAlignment="Center" Margin="10" FontSize="18" Width="200" />
         </StackPanel>
         <Label Content="{Binding ElementName=TextName, Path=(Validation.Errors)[0].ErrorContent}" Foreground="Red" />
         <StackPanel Orientation="Horizontal">
             <Label Content="Definition:   " Margin="10" FontSize="18" />
             <TextBox x:Name="TextDefinition" 
-                 Text="{Binding Definition, UpdateSourceTrigger=PropertyChanged}" 
-                 ToolTip="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent}" 
-                 VerticalContentAlignment="Center" Margin="10" FontSize="18" Width="200" />
+             Text="{Binding Definition, UpdateSourceTrigger=PropertyChanged}" 
+             ToolTip="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent}" 
+             VerticalContentAlignment="Center" Margin="10" FontSize="18" Width="200" />
         </StackPanel>
         <Label Content="{Binding ElementName=TextDefinition, Path=(Validation.Errors)[0].ErrorContent}" Foreground="Red" />
         <StackPanel Orientation="Horizontal">
-            <Label Content="Image URL: " Margin="10" FontSize="18" />
-            <TextBox x:Name="TextImageUrl" Text="{Binding ImageUrl}" VerticalContentAlignment="Center" Margin="10" FontSize="18" Width="200" />
+            <Label Content="Image:         " Margin="10" FontSize="18" />
+            <StackPanel>
+                <Button Content="Upload Image" Margin="10" Width="100" Height="30" Click="UploadImageButton_Click" />
+                <Image x:Name="PreviewImage" Visibility="{Binding IsImageUploaded, Converter={StaticResource BoolToVisibility}}" Source="{Binding Image}" Width="100" Height="100" />
+            </StackPanel>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <Label Content="Category:    " Margin="10" FontSize="18" />

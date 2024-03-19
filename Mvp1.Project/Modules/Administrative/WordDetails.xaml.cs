@@ -1,7 +1,10 @@
 ﻿using Mvp1.Project.Data;
 using Mvp1.Project.Models;
+using System;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Windows;
+using System.Windows.Media.Imaging;
 
 namespace Mvp1.Project.Modules.Administrative
 {
@@ -9,13 +12,15 @@ namespace Mvp1.Project.Modules.Administrative
     {
         public Word Word { get; set; }
         public ObservableCollection<Word> Dictionary { get; set; }
+        public BitmapImage WordImage { get; set; }
 
         public WordDetails(Word word, ObservableCollection<Word> dictionary)
         {
             InitializeComponent();
             Word = word;
             Dictionary = dictionary;
-            DataContext = Word;
+            DataContext = this;
+            LoadImage();
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e) => new DictionaryManager().Show();
@@ -29,6 +34,15 @@ namespace Mvp1.Project.Modules.Administrative
                 Dictionary.Remove(Word);
                 new DataManager("../../Data/dictionary.json").SaveData(Dictionary);
                 Close();
+            }
+        }
+
+        private void LoadImage()
+        {
+            if (!string.IsNullOrWhiteSpace(Word.Image))
+            {
+                string fullPath = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, Word.Image));
+                WordImage = new BitmapImage(new Uri(fullPath, UriKind.Absolute));
             }
         }
     }
