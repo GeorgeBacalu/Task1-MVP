@@ -3,7 +3,7 @@
     "Id": 1,
     "Name": "Asculta",
     "Definition": "A fi atent la sunete sau la ceea ce cineva spune.",
-    "Image": "https://via.placeholder.com/150",
+    "Image": "../../Resources/Images/default.jpg",
     "Category": {
       "Id": 2,
       "Name": "Verbe"
@@ -13,7 +13,7 @@
     "Id": 2,
     "Name": "Căldură",
     "Definition": "Sensatie perceputa in conditii de temperaturi ridicate.",
-    "Image": "https://via.placeholder.com/150",
+    "Image": "../../Resources/Images/default.jpg",
     "Category": {
       "Id": 1,
       "Name": "Substantive"
@@ -23,7 +23,7 @@
     "Id": 3,
     "Name": "Carte",
     "Definition": "Obiect constând din mai multe foi tipărite și legate împreună, care conțin Name scris.",
-    "Image": "https://via.placeholder.com/150",
+    "Image": "../../Resources/Images/default.jpg",
     "Category": {
       "Id": 1,
       "Name": "Substantive"
@@ -33,7 +33,7 @@
     "Id": 4,
     "Name": "Citit",
     "Definition": "A recunoaște și a înțelege scrisul.",
-    "Image": "https://via.placeholder.com/150",
+    "Image": "../../Resources/Images/default.jpg",
     "Category": {
       "Id": 2,
       "Name": "Verbe"
@@ -43,7 +43,7 @@
     "Id": 5,
     "Name": "Construi",
     "Definition": "A face, a realiza o clădire sau o structură arhitecturală.",
-    "Image": "https://via.placeholder.com/150",
+    "Image": "../../Resources/Images/default.jpg",
     "Category": {
       "Id": 2,
       "Name": "Verbe"
@@ -53,7 +53,7 @@
     "Id": 6,
     "Name": "Desen",
     "Definition": "Reprezentare grafică a unui obiect prin linii pe o suprafață.",
-    "Image": "https://via.placeholder.com/150",
+    "Image": "../../Resources/Images/default.jpg",
     "Category": {
       "Id": 1,
       "Name": "Substantive"
@@ -63,7 +63,7 @@
     "Id": 7,
     "Name": "Energie",
     "Definition": "Capacitatea de a efectua un lucru, de a produce mișcare sau schimbări.",
-    "Image": "https://via.placeholder.com/150",
+    "Image": "../../Resources/Images/default.jpg",
     "Category": {
       "Id": 1,
       "Name": "Substantive"
@@ -73,7 +73,7 @@
     "Id": 8,
     "Name": "Fruct",
     "Definition": "Partea unei plante care conține semințele și este de obicei comestibilă după coacere.",
-    "Image": "https://via.placeholder.com/150",
+    "Image": "../../Resources/Images/default.jpg",
     "Category": {
       "Id": 1,
       "Name": "Substantive"
@@ -83,7 +83,7 @@
     "Id": 9,
     "Name": "Istoric",
     "Definition": "Care aparține trecutului; parte a istoriei.",
-    "Image": "https://via.placeholder.com/150",
+    "Image": "../../Resources/Images/default.jpg",
     "Category": {
       "Id": 1,
       "Name": "Substantive"
@@ -93,7 +93,7 @@
     "Id": 10,
     "Name": "Libertate",
     "Definition": "Starea unei persoane care nu este supusă constrângerilor.",
-    "Image": "https://via.placeholder.com/150",
+    "Image": "../../Resources/Images/default.jpg",
     "Category": {
       "Id": 1,
       "Name": "Substantive"
@@ -103,7 +103,7 @@
     "Id": 11,
     "Name": "Merge",
     "Definition": "A se deplasa într-un anumit mod sau spre o anumită direcție.",
-    "Image": "https://via.placeholder.com/150",
+    "Image": "../../Resources/Images/default.jpg",
     "Category": {
       "Id": 2,
       "Name": "Verbe"
@@ -113,7 +113,7 @@
     "Id": 12,
     "Name": "Muzică",
     "Definition": "Artă de a combina sunetele într-o manieră plăcută urechii.",
-    "Image": "https://via.placeholder.com/150",
+    "Image": "../../Resources/Images/default.jpg",
     "Category": {
       "Id": 1,
       "Name": "Substantive"
@@ -123,7 +123,7 @@
     "Id": 13,
     "Name": "Oraș",
     "Definition": "Unitate administrativă urbană cu o populație densă și activități variate.",
-    "Image": "https://via.placeholder.com/150",
+    "Image": "../../Resources/Images/default.jpg",
     "Category": {
       "Id": 1,
       "Name": "Substantive"
@@ -133,7 +133,7 @@
     "Id": 14,
     "Name": "Ploaie",
     "Definition": "Cădere de apă din nori sub formă de picături.",
-    "Image": "https://via.placeholder.com/150",
+    "Image": "../../Resources/Images/default.jpg",
     "Category": {
       "Id": 1,
       "Name": "Substantive"
@@ -143,7 +143,7 @@
     "Id": 15,
     "Name": "Prietenie",
     "Definition": "Relație afectivă între persoane, bazată pe simpatie și încredere.",
-    "Image": "https://via.placeholder.com/150",
+    "Image": "../../Resources/Images/default.jpg",
     "Category": {
       "Id": 1,
       "Name": "Substantive"
@@ -153,7 +153,7 @@
     "Id": 16,
     "Name": "Rapid",
     "Definition": "Care se mișcă, se desfășoară cu viteză mare; iute.",
-    "Image": "https://via.placeholder.com/150",
+    "Image": "../../Resources/Images/default.jpg",
     "Category": {
       "Id": 3,
       "Name": "Adjective"
@@ -163,7 +163,7 @@
     "Id": 17,
     "Name": "Scrie",
     "Definition": "A forma litere, cuvinte sau simboluri pe o suprafață pentru a comunica informații.",
-    "Image": "https://via.placeholder.com/150",
+    "Image": "../../Resources/Images/default.jpg",
     "Category": {
       "Id": 2,
       "Name": "Verbe"
@@ -173,7 +173,7 @@
     "Id": 18,
     "Name": "Soare",
     "Definition": "Astre central al sistemului nostru planetar, în jurul căruia se rotesc planetele.",
-    "Image": "https://via.placeholder.com/150",
+    "Image": "../../Resources/Images/default.jpg",
     "Category": {
       "Id": 1,
       "Name": "Substantive"
@@ -183,7 +183,7 @@
     "Id": 19,
     "Name": "Verde",
     "Definition": "De culoarea frunzelor sănătoase.",
-    "Image": "https://via.placeholder.com/150",
+    "Image": "../../Resources/Images/default.jpg",
     "Category": {
       "Id": 3,
       "Name": "Adjective"
@@ -193,7 +193,7 @@
     "Id": 20,
     "Name": "Zâmbi",
     "Definition": "A exprima bucurie sau bunăvoință printr-o expresie facială caracteristică.",
-    "Image": "https://via.placeholder.com/150",
+    "Image": "../../Resources/Images/default.jpg",
     "Category": {
       "Id": 2,
       "Name": "Verbe"

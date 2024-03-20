@@ -88,6 +88,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\ActionCommand.cs" />
+    <Compile Include="Commands\SearchCommand.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Modules\Administrative\AddWordForm.xaml.cs">
       <DependentUpon>AddWordForm.xaml</DependentUpon>
@@ -98,6 +99,10 @@
     <Compile Include="Modules\Administrative\WordDetails.xaml.cs">
       <DependentUpon>WordDetails.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Modules\WordFinder\WordFinderDashboard.xaml.cs">
+      <DependentUpon>WordFinderDashboard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\WordFinderViewModel.cs" />
     <Compile Include="ViewModels\WordFormViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -133,6 +138,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Modules\Entertainment\EntertainmentModule.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Modules\WordFinder\WordFinderDashboard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -1,27 +1,29 @@
-﻿using System;
+﻿using Mvp1.Project.Data;
+using Mvp1.Project.Models;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Mvp1.Project.Modules.WordFinder
 {
-    /// <summary>
-    /// Interaction logic for WordFinderModule.xaml
-    /// </summary>
     public partial class WordFinderModule : Window
     {
+        public IList<User> Users { get; private set; }
+
         public WordFinderModule()
         {
             InitializeComponent();
+            DataManager dataManager = new DataManager("../../Data/users.json");
+            Users = dataManager.LoadData<IList<User>>();
+        }
+
+        private void ButtonLogin_Click(object sender, RoutedEventArgs e)
+        {
+            string username = TextUsername.Text;
+            string password = TextPassword.Password;
+            User user = Users.FirstOrDefault(u => u.Username == username && u.Password == password);
+            if (user == null) MessageBox.Show("Invalid username or password!");
+            else new WordFinderDashboard().Show();
         }
     }
 }
