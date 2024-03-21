@@ -1,0 +1,10 @@
+﻿<Window x:Class="Mvp1.Project.Modules.Entertainment.EntertainmentStart"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Mvp1.Project.Modules.Entertainment"
+        mc:Ignorable="d"
+        Title="EntertainmentStart" Height="450" Width="800">
+    <Button Content="Start Game" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="50" FontSize="25" FontWeight="Bold" Click="StartButton_Click" />
+</Window>

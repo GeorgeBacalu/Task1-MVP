@@ -3,7 +3,7 @@
     "Id": 1,
     "Name": "Asculta",
     "Definition": "A fi atent la sunete sau la ceea ce cineva spune.",
-    "Image": "../../Resources/Images/default.jpg",
+    "Image": "../../Resources/Images/asculta.jpg",
     "Category": {
       "Id": 2,
       "Name": "Verbe"
@@ -13,7 +13,7 @@
     "Id": 2,
     "Name": "Căldură",
     "Definition": "Sensatie perceputa in conditii de temperaturi ridicate.",
-    "Image": "../../Resources/Images/default.jpg",
+    "Image": "../../Resources/Images/caldura.jpg",
     "Category": {
       "Id": 1,
       "Name": "Substantive"
@@ -23,7 +23,7 @@
     "Id": 3,
     "Name": "Carte",
     "Definition": "Obiect constând din mai multe foi tipărite și legate împreună, care conțin Name scris.",
-    "Image": "../../Resources/Images/default.jpg",
+    "Image": "../../Resources/Images/carte.jpg",
     "Category": {
       "Id": 1,
       "Name": "Substantive"
@@ -31,9 +31,9 @@
   },
   {
     "Id": 4,
-    "Name": "Citit",
+    "Name": "Citi",
     "Definition": "A recunoaște și a înțelege scrisul.",
-    "Image": "../../Resources/Images/default.jpg",
+    "Image": "../../Resources/Images/citi.jpg",
     "Category": {
       "Id": 2,
       "Name": "Verbe"
@@ -43,7 +43,7 @@
     "Id": 5,
     "Name": "Construi",
     "Definition": "A face, a realiza o clădire sau o structură arhitecturală.",
-    "Image": "../../Resources/Images/default.jpg",
+    "Image": "../../Resources/Images/construi.jpg",
     "Category": {
       "Id": 2,
       "Name": "Verbe"
@@ -53,7 +53,7 @@
     "Id": 6,
     "Name": "Desen",
     "Definition": "Reprezentare grafică a unui obiect prin linii pe o suprafață.",
-    "Image": "../../Resources/Images/default.jpg",
+    "Image": "../../Resources/Images/desen.jpg",
     "Category": {
       "Id": 1,
       "Name": "Substantive"
@@ -63,7 +63,7 @@
     "Id": 7,
     "Name": "Energie",
     "Definition": "Capacitatea de a efectua un lucru, de a produce mișcare sau schimbări.",
-    "Image": "../../Resources/Images/default.jpg",
+    "Image": "../../Resources/Images/energie.jpg",
     "Category": {
       "Id": 1,
       "Name": "Substantive"
@@ -73,7 +73,7 @@
     "Id": 8,
     "Name": "Fruct",
     "Definition": "Partea unei plante care conține semințele și este de obicei comestibilă după coacere.",
-    "Image": "../../Resources/Images/default.jpg",
+    "Image": "../../Resources/Images/fruct.jpg",
     "Category": {
       "Id": 1,
       "Name": "Substantive"
@@ -83,7 +83,7 @@
     "Id": 9,
     "Name": "Istoric",
     "Definition": "Care aparține trecutului; parte a istoriei.",
-    "Image": "../../Resources/Images/default.jpg",
+    "Image": "../../Resources/Images/istoric.jpg",
     "Category": {
       "Id": 1,
       "Name": "Substantive"
@@ -93,7 +93,7 @@
     "Id": 10,
     "Name": "Libertate",
     "Definition": "Starea unei persoane care nu este supusă constrângerilor.",
-    "Image": "../../Resources/Images/default.jpg",
+    "Image": "../../Resources/Images/libertate.jpg",
     "Category": {
       "Id": 1,
       "Name": "Substantive"
@@ -172,7 +172,7 @@
   {
     "Id": 18,
     "Name": "Soare",
-    "Definition": "Astre central al sistemului nostru planetar, în jurul căruia se rotesc planetele.",
+    "Definition": "Astru central al sistemului nostru solar, în jurul căruia se rotesc planetele.",
     "Image": "../../Resources/Images/default.jpg",
     "Category": {
       "Id": 1,

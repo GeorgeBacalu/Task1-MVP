@@ -88,7 +88,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\ActionCommand.cs" />
+    <Compile Include="Commands\NavigationCommand.cs" />
     <Compile Include="Commands\SearchCommand.cs" />
+    <Compile Include="Converters\NullToVisibilityConverter.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Modules\Administrative\AddWordForm.xaml.cs">
       <DependentUpon>AddWordForm.xaml</DependentUpon>
@@ -99,9 +101,20 @@
     <Compile Include="Modules\Administrative\WordDetails.xaml.cs">
       <DependentUpon>WordDetails.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Modules\Entertainment\EntertainmentStart.xaml.cs">
+      <DependentUpon>EntertainmentStart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Entertainment\Quiz.xaml.cs">
+      <DependentUpon>Quiz.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Entertainment\ResultsScreen.xaml.cs">
+      <DependentUpon>ResultsScreen.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Modules\WordFinder\WordFinderDashboard.xaml.cs">
       <DependentUpon>WordFinderDashboard.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\QuestionViewModel.cs" />
+    <Compile Include="ViewModels\QuizViewModel.cs" />
     <Compile Include="ViewModels\WordFinderViewModel.cs" />
     <Compile Include="ViewModels\WordFormViewModel.cs" />
     <Page Include="MainWindow.xaml">
@@ -138,6 +151,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Modules\Entertainment\EntertainmentModule.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Modules\Entertainment\EntertainmentStart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Modules\Entertainment\Quiz.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Modules\Entertainment\ResultsScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -196,5 +221,19 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\asculta.jpg" />
+    <Resource Include="Resources\Images\caldura.jpg" />
+    <Resource Include="Resources\Images\carte.jpg" />
+    <Resource Include="Resources\Images\citi.jpg" />
+    <Resource Include="Resources\Images\construi.jpg" />
+    <Resource Include="Resources\Images\default.jpg" />
+    <Resource Include="Resources\Images\desen.jpg" />
+    <Resource Include="Resources\Images\energie.jpg" />
+    <Resource Include="Resources\Images\fruct.jpg" />
+    <Resource Include="Resources\Images\istoric.jpg" />
+    <Resource Include="Resources\Images\libertate.jpg" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

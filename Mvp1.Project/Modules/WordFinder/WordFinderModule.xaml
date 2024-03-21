@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="WordFinderModule" Height="450" Width="800">
     <StackPanel HorizontalAlignment="Center">
-        <TextBlock Text="Word Finder Login" HorizontalAlignment="Center" Margin="30" FontSize="30" FontWeight="Bold" />
+        <TextBlock Text="Word Finder Module Login" HorizontalAlignment="Center" Margin="30" FontSize="30" FontWeight="Bold" />
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="Username:" Margin="10" FontSize="18" />
             <TextBox x:Name="TextUsername" Margin="10" FontSize="18" Width="200" />
