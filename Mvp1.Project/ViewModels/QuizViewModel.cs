@@ -1,10 +1,12 @@
 ﻿using Mvp1.Project.Commands;
 using Mvp1.Project.Data;
 using Mvp1.Project.Models;
+using Mvp1.Project.Modules.Entertainment;
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Windows;
 using System.Windows.Input;
 
@@ -29,6 +31,9 @@ namespace Mvp1.Project.ViewModels
         private ICommand navigationCommand;
         public ICommand NavigationCommand { get => navigationCommand; set { navigationCommand = value; OnPropertyChanged(nameof(NavigationCommand)); } }
 
+        private ICommand checkWordCommand;
+        public ICommand CheckWordCommand { get => checkWordCommand; set { checkWordCommand = value; OnPropertyChanged(nameof(CheckWordCommand)); } }
+
         public QuizViewModel()
         {
             Dictionary = dictionaryDataManager.LoadData<ObservableCollection<Word>>();
@@ -36,25 +41,44 @@ namespace Mvp1.Project.ViewModels
             var randomQuestions = Dictionary.OrderBy(x => random.Next()).Take(5).ToList();
             Questions = new ObservableCollection<Word>(randomQuestions);
             CurrentQuestion = 1;
-            CurrentQuestionView = new QuestionViewModel(Questions[CurrentQuestion - 1]);
+            CheckWordCommand = new CheckWordCommand(CheckWord, CanCheckWord);
+            CurrentQuestionView = new QuestionViewModel(Questions[CurrentQuestion - 1], CheckWordCommand);
             NavigationCommand = new NavigationCommand(Navigate, CanNavigate);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
-        public string NavigationButtonText => CurrentQuestion == questions.Count ? "Finish" : "Next";
+        public string NavigationButtonText => CurrentQuestion == Questions.Count ? "Finish" : "Next";
 
-        private void Navigate(object obj)
+        public string PreviousButtonVisibility => CurrentQuestion == 1 ? "Hidden" : "Visible";
+
+        private void Navigate(object direction)
         {
-            if (obj.ToString() == "Previous" && CurrentQuestion > 1) --CurrentQuestion;
-            else if (obj.ToString() == "Next" && CurrentQuestion < Questions.Count) ++CurrentQuestion;
-            CurrentQuestionView = new QuestionViewModel(Questions[CurrentQuestion - 1]);
+            if ((direction as string) == "Previous" && CurrentQuestion > 1) --CurrentQuestion;
+            else if ((direction as string) == "Next" && CurrentQuestion < Questions.Count) ++CurrentQuestion;
+            else if ((direction as string) == "Next" && CurrentQuestion == Questions.Count) new ResultsScreen().Show();
+            CurrentQuestionView = new QuestionViewModel(Questions[CurrentQuestion - 1], CheckWordCommand);
+            CurrentQuestionView.GuessedWord = "";
             OnPropertyChanged(nameof(CurrentQuestionView));
             OnPropertyChanged(nameof(NavigationButtonText));
-            MessageBox.Show()
+            OnPropertyChanged(nameof(PreviousButtonVisibility));
+            CurrentQuestionView.OnPropertyChanged(nameof(QuestionViewModel.GuessedWord));
         }
 
         private bool CanNavigate(object obj) => CurrentQuestion <= Questions.Count;
+
+        private void CheckWord(object obj)
+        {
+            Word correctWord = CurrentQuestionView.Word;
+            if (CurrentQuestionView.GuessedWord != null && CurrentQuestionView.GuessedWord.Equals(correctWord.Name, StringComparison.OrdinalIgnoreCase))
+                MessageBox.Show("Correct!", "Quiz", MessageBoxButton.OK, MessageBoxImage.Information);
+            else
+            {
+                MessageBox.Show($"Wrong! Correct answer was: {correctWord.Name}", "Quiz", MessageBoxButton.OK, MessageBoxImage.Information);
+            }   
+        }
+
+        private bool CanCheckWord(object obj) => true;
     }
 }

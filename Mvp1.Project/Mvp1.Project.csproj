@@ -88,6 +88,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\ActionCommand.cs" />
+    <Compile Include="Commands\CheckWordCommand.cs" />
     <Compile Include="Commands\NavigationCommand.cs" />
     <Compile Include="Commands\SearchCommand.cs" />
     <Compile Include="Converters\NullToVisibilityConverter.cs" />

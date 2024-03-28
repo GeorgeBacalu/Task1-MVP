@@ -23,7 +23,10 @@
         <StackPanel Grid.Row="1" Margin="0,25">
             <Image Source="{Binding CurrentQuestionView.Image}" Visibility="{Binding CurrentQuestionView.Image, Converter={StaticResource NullToVisibility}}" Height="150" Width="150" HorizontalAlignment="Left" Margin="0,0,0,10" />
             <TextBlock Text="{Binding CurrentQuestionView.Definition, StringFormat='Definition: {0}'}" Visibility="{Binding CurrentQuestionView.Definition, Converter={StaticResource NullToVisibility}}" TextWrapping="Wrap" FontSize="16" Margin="0,0,0,10" />
-            <TextBox x:Name="TextBoxGuessedWord" Text="{Binding GuessedWord}" HorizontalAlignment="Left" VerticalContentAlignment="Center" Width="300" Height="30" />
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="TextBoxGuessedWord" Text="{Binding CurrentQuestionView.GuessedWord, Mode=TwoWay}" HorizontalAlignment="Left" VerticalContentAlignment="Center" Width="300" Height="30" Margin="0,0,15,0" />
+                <Button Content="Check" Width="100" Height="35" Command="{Binding CurrentQuestionView.CheckWordCommand}" />
+            </StackPanel>
         </StackPanel>
         <Grid Grid.Row="2" Margin="0,0,10,0">
             <Grid.ColumnDefinitions>
@@ -31,7 +34,7 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Width="75" Height="35" Content="Previous" Command="{Binding NavigationCommand}" CommandParameter="Previous" IsEnabled="{Binding IsNavigationEnabled}" />
+            <Button Grid.Column="0" Width="75" Height="35" Visibility="{Binding PreviousButtonVisibility}" Content="Previous" Command="{Binding NavigationCommand}" CommandParameter="Previous" IsEnabled="{Binding IsNavigationEnabled}" />
             <Button Grid.Column="2" Width="75" Height="35" Content="{Binding NavigationButtonText}" Command="{Binding NavigationCommand}" CommandParameter="Next" IsEnabled="{Binding IsNavigationEnabled}" />
         </Grid>
     </Grid>

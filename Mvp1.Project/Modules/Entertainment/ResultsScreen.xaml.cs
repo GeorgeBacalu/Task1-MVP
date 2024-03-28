@@ -1,5 +1,4 @@
-﻿
-using System.Windows;
+﻿using System.Windows;
 
 namespace Mvp1.Project.Modules.Entertainment
 {
@@ -10,8 +9,8 @@ namespace Mvp1.Project.Modules.Entertainment
             InitializeComponent();
         }
 
-        private void BackButton_Click(object sender, RoutedEventArgs e) => new EntertainmentStart().Show();
+        private void BackButton_Click(object sender, RoutedEventArgs e) => new EntertainmentModule().Show();
 
-        private void PlayAgainButton_Click(object sender, RoutedEventArgs e) => new Quiz().Show();
+        private void PlayAgainButton_Click(object sender, RoutedEventArgs e) => new EntertainmentStart().Show();
     }
 }

@@ -9,8 +9,8 @@
     <StackPanel Margin="15" VerticalAlignment="Center" HorizontalAlignment="Center">
         <TextBlock Text="{Binding Result, StringFormat='Results: {0}%'}" FontSize="20" FontWeight="Black" Margin="0,0,0,15" />
         <StackPanel Orientation="Horizontal">
-            <Button Content="Back" Click="BackButton_Click" Width="100" Height="40" Margin="0,0,20,0" />
-            <Button Content="Play again" Click="PlayAgainButton_Click" Width="100" Height="40" />
+            <Button Content="Back" Click="BackButton_Click"  Width="100" Height="40" Margin="0,0,20,0" />
+            <Button Content="Play again" Click="PlayAgainButton_Click"  Width="100" Height="40" />
         </StackPanel>
     </StackPanel>
 </Window>
